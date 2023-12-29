@@ -1,1 +1,194 @@
-{"_type":"export","__export_format":4,"__export_date":"2023-12-29T03:27:08.772Z","__export_source":"insomnia.desktop.app:v8.5.1","resources":[{"_id":"req_41fa479e972d4abb87caeb5f5cb12bc5","parentId":"wrk_cac0f0b6683f48328d3e51a5986e2226","modified":1703814499549,"created":1703811828226,"url":"http://localhost:8080/produtos","name":"Read findAll","description":"","method":"GET","body":{},"parameters":[],"headers":[{"name":"User-Agent","value":"insomnia/8.5.1"}],"authentication":{},"metaSortKey":-1703811828276,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"wrk_cac0f0b6683f48328d3e51a5986e2226","parentId":null,"modified":1703811813332,"created":1703811813332,"name":"techchallenge","description":"","scope":"collection","_type":"workspace"},{"_id":"req_8d2a8d46c90349e88cef066f58c7d738","parentId":"wrk_cac0f0b6683f48328d3e51a5986e2226","modified":1703820343687,"created":1703811934995,"url":"http://localhost:8080/produtos","name":"Create save","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"nome\": \"Ração\",\n\t\"descricao\": \"Comida para cachorro\",\n\t\"preco\": 50.0,\n\t\"urlDaImagem\": \"pacote\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"},{"name":"User-Agent","value":"insomnia/8.5.1"}],"authentication":{},"metaSortKey":-1703811828176,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_8c071878a12e408da0608cf967951adc","parentId":"wrk_cac0f0b6683f48328d3e51a5986e2226","modified":1703819330627,"created":1703814318092,"url":"http://localhost:8080/produtos/{% response 'body', 'req_8d2a8d46c90349e88cef066f58c7d738', 'b64::JC5pZA==::46b', 'never', 60 %}","name":"Read findById","description":"","method":"GET","body":{},"parameters":[],"headers":[{"name":"User-Agent","value":"insomnia/8.5.1"}],"authentication":{},"metaSortKey":-1703811828138.5,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_af215dc19b734f31b1d760ee73ea3416","parentId":"wrk_cac0f0b6683f48328d3e51a5986e2226","modified":1703819341710,"created":1703811943432,"url":"http://localhost:8080/produtos/{% response 'body', 'req_8d2a8d46c90349e88cef066f58c7d738', 'b64::JC5pZA==::46b', 'never', 60 %}","name":"Update updateById","description":"","method":"PUT","body":{"mimeType":"application/json","text":"\t{\n\t\t\"id\": \"a7fdf8ef-9c05-4159-bb8f-0c34cc4ed344\",\n\t\t\"nome\": \"Ração Nova\",\n\t\t\"descricao\": \"Comida para cachorro\",\n\t\t\"preco\": 150.0,\n\t\t\"urlDaImagem\": \"pacote\"\n\t}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"},{"name":"User-Agent","value":"insomnia/8.5.1"}],"authentication":{},"metaSortKey":-1703811828126,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_49304ab8c30f43db9c284dd8dff2b8c6","parentId":"wrk_cac0f0b6683f48328d3e51a5986e2226","modified":1703819360863,"created":1703811950537,"url":"http://localhost:8080/produtos/{% response 'body', 'req_8d2a8d46c90349e88cef066f58c7d738', 'b64::JC5pZA==::46b', 'never', 60 %}","name":"Delete deleteById","description":"","method":"DELETE","body":{},"parameters":[],"headers":[{"name":"User-Agent","value":"insomnia/8.5.1"}],"authentication":{},"metaSortKey":-1703811828076,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"env_d99adcb8822a448f20d3fae4e8bedeb8e43bb24a","parentId":"wrk_cac0f0b6683f48328d3e51a5986e2226","modified":1703811813336,"created":1703811813336,"name":"Base Environment","data":{},"dataPropertyOrder":null,"color":null,"isPrivate":false,"metaSortKey":1703811813336,"_type":"environment"},{"_id":"jar_d99adcb8822a448f20d3fae4e8bedeb8e43bb24a","parentId":"wrk_cac0f0b6683f48328d3e51a5986e2226","modified":1703811813342,"created":1703811813342,"name":"Default Jar","cookies":[],"_type":"cookie_jar"}]}
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-12-29T03:27:08.772Z",
+  "__export_source": "insomnia.desktop.app:v8.5.1",
+  "resources": [
+    {
+      "_id": "req_41fa479e972d4abb87caeb5f5cb12bc5",
+      "parentId": "wrk_cac0f0b6683f48328d3e51a5986e2226",
+      "modified": 1703814499549,
+      "created": 1703811828226,
+      "url": "http://localhost:8080/produtos",
+      "name": "Read findAll",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/8.5.1"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1703811828276,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_cac0f0b6683f48328d3e51a5986e2226",
+      "parentId": null,
+      "modified": 1703811813332,
+      "created": 1703811813332,
+      "name": "techchallenge",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_8d2a8d46c90349e88cef066f58c7d738",
+      "parentId": "wrk_cac0f0b6683f48328d3e51a5986e2226",
+      "modified": 1703820343687,
+      "created": 1703811934995,
+      "url": "http://localhost:8080/produtos",
+      "name": "Create save",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"nome\": \"Ração\",\n\t\"descricao\": \"Comida para cachorro\",\n\t\"preco\": 50.0,\n\t\"urlDaImagem\": \"pacote\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnia/8.5.1"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1703811828176,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8c071878a12e408da0608cf967951adc",
+      "parentId": "wrk_cac0f0b6683f48328d3e51a5986e2226",
+      "modified": 1703819330627,
+      "created": 1703814318092,
+      "url": "http://localhost:8080/produtos/{% response 'body', 'req_8d2a8d46c90349e88cef066f58c7d738', 'b64::JC5pZA==::46b', 'never', 60 %}",
+      "name": "Read findById",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/8.5.1"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1703811828138.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_af215dc19b734f31b1d760ee73ea3416",
+      "parentId": "wrk_cac0f0b6683f48328d3e51a5986e2226",
+      "modified": 1703819341710,
+      "created": 1703811943432,
+      "url": "http://localhost:8080/produtos/{% response 'body', 'req_8d2a8d46c90349e88cef066f58c7d738', 'b64::JC5pZA==::46b', 'never', 60 %}",
+      "name": "Update updateById",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "\t{\n\t\t\"id\": \"a7fdf8ef-9c05-4159-bb8f-0c34cc4ed344\",\n\t\t\"nome\": \"Ração Nova\",\n\t\t\"descricao\": \"Comida para cachorro\",\n\t\t\"preco\": 150.0,\n\t\t\"urlDaImagem\": \"pacote\"\n\t}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnia/8.5.1"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1703811828126,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_49304ab8c30f43db9c284dd8dff2b8c6",
+      "parentId": "wrk_cac0f0b6683f48328d3e51a5986e2226",
+      "modified": 1703819360863,
+      "created": 1703811950537,
+      "url": "http://localhost:8080/produtos/{% response 'body', 'req_8d2a8d46c90349e88cef066f58c7d738', 'b64::JC5pZA==::46b', 'never', 60 %}",
+      "name": "Delete deleteById",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/8.5.1"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1703811828076,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_d99adcb8822a448f20d3fae4e8bedeb8e43bb24a",
+      "parentId": "wrk_cac0f0b6683f48328d3e51a5986e2226",
+      "modified": 1703811813336,
+      "created": 1703811813336,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1703811813336,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_d99adcb8822a448f20d3fae4e8bedeb8e43bb24a",
+      "parentId": "wrk_cac0f0b6683f48328d3e51a5986e2226",
+      "modified": 1703811813342,
+      "created": 1703811813342,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}
