@@ -1,5 +1,6 @@
 package br.com.fiap.techchallenge.techchallenge;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +19,8 @@ public class ProdutoService {
         return produtos;
     }
 
-    public Optional<ProdutoEntity> findById(UUID id) {
-        var produto = produtoRepository.findById(id);
+    public ProdutoEntity findById(UUID id) {
+        var produto = produtoRepository.findById(id).orElseThrow(() -> new ControllerNotFoundException("Produto não encontrado."));
         return produto;
     }
 
@@ -29,13 +30,17 @@ public class ProdutoService {
     }
 
     public ProdutoEntity updateById(UUID id, ProdutoEntity produto) {
-        ProdutoEntity buscaProduto = produtoRepository.getOne(id);
-        buscaProduto.setNome(produto.getNome());
-        buscaProduto.setDescricao(produto.getDescricao());
-        buscaProduto.setPreco(produto.getPreco());
-        buscaProduto.setUrlDaImagem(produto.getUrlDaImagem());
-        buscaProduto = produtoRepository.save(buscaProduto);
-        return buscaProduto;
+        try {
+            ProdutoEntity buscaProduto = produtoRepository.getOne(id);
+            buscaProduto.setNome(produto.getNome());
+            buscaProduto.setDescricao(produto.getDescricao());
+            buscaProduto.setPreco(produto.getPreco());
+            buscaProduto.setUrlDaImagem(produto.getUrlDaImagem());
+            buscaProduto = produtoRepository.save(buscaProduto);
+            return buscaProduto;
+        } catch (EntityNotFoundException e) {
+            throw new ControllerNotFoundException("Produto não encontrado.");
+        }
     }
 
     public void deleteById(UUID id) {

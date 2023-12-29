@@ -23,7 +23,7 @@ public class ProdutoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<ProdutoEntity>> findById(@PathVariable UUID id) {
+    public ResponseEntity<ProdutoEntity> findById(@PathVariable UUID id) {
         var produto = produtoService.findById(id);
         return ResponseEntity.ok(produto);
     }
