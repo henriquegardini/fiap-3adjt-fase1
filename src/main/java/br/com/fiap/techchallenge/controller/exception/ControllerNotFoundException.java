@@ -1,4 +1,4 @@
-package br.com.fiap.techchallenge.techchallenge;
+package br.com.fiap.techchallenge.controller.exception;
 
 public class ControllerNotFoundException extends RuntimeException {
 

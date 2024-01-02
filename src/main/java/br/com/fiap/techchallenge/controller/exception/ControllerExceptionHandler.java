@@ -1,4 +1,4 @@
-package br.com.fiap.techchallenge.techchallenge;
+package br.com.fiap.techchallenge.controller.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
