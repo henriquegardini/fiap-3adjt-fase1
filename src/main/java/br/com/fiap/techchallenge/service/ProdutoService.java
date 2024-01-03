@@ -26,7 +26,8 @@ public class ProdutoService {
     }
 
     public ProdutoDTO findById(UUID id) {
-        var produto = produtoRepository.findById(id).orElseThrow(() -> new ControllerNotFoundException("Produto não encontrado."));
+        var produto = produtoRepository.findById(id).orElseThrow(()
+                -> new ControllerNotFoundException("Produto não encontrado."));
         return toProdutoDTO(produto);
     }
 
@@ -54,24 +55,23 @@ public class ProdutoService {
         produtoRepository.deleteById(id);
     }
 
-    private ProdutoDTO toProdutoDTO(ProdutoEntity produto) {
+    private ProdutoDTO toProdutoDTO(ProdutoEntity produtoEntity) {
         return new ProdutoDTO(
-                produto.getId(),
-                produto.getNome(),
-                produto.getDescricao(),
-                produto.getPreco(),
-                produto.getUrlDaImagem()
+                produtoEntity.getId(),
+                produtoEntity.getNome(),
+                produtoEntity.getDescricao(),
+                produtoEntity.getPreco(),
+                produtoEntity.getUrlDaImagem()
         );
     }
 
-    private ProdutoEntity toProdutoEntity(ProdutoDTO produto) {
+    private ProdutoEntity toProdutoEntity(ProdutoDTO produtoDTO) {
         return new ProdutoEntity(
-                produto.id(),
-                produto.nome(),
-                produto.descricao(),
-                produto.preco(),
-                produto.urlDaImagem()
+                produtoDTO.id(),
+                produtoDTO.nome(),
+                produtoDTO.descricao(),
+                produtoDTO.preco(),
+                produtoDTO.urlDaImagem()
         );
     }
-
 }
